@@ -18,10 +18,7 @@ namespace Game_Elements
 
             // Event subscriptions
             GameManager.CurrentPlayerChanged += GameManager_CurrentPlayerChanged;
-            if (GameManager.CurrentPlayer != null)
-            {
-                GameManager.CurrentPlayer.PropertyChanged += CurrentPlayer_PropertyChanged;
-            }
+            GameManager.CurrentPlayer?.PropertyChanged += CurrentPlayer_PropertyChanged;
 
             // Update UI elements for current player
             UpdateUI();
@@ -31,10 +28,7 @@ namespace Game_Elements
         {
             // Unsubscribe
             GameManager.CurrentPlayerChanged -= GameManager_CurrentPlayerChanged;
-            if (GameManager.CurrentPlayer != null)
-            {
-                GameManager.CurrentPlayer.PropertyChanged -= CurrentPlayer_PropertyChanged;
-            }
+            GameManager.CurrentPlayer?.PropertyChanged -= CurrentPlayer_PropertyChanged;
         }
 
         private void GameManager_CurrentPlayerChanged(Player? previousPlayer)
@@ -47,16 +41,10 @@ namespace Game_Elements
             }
 
             // Unsubscribe from previous player's events
-            if (previousPlayer != null)
-            {
-                previousPlayer.PropertyChanged -= CurrentPlayer_PropertyChanged;
-            }
+            previousPlayer?.PropertyChanged -= CurrentPlayer_PropertyChanged;
 
             // Subscribe to new player's events
-            if (GameManager.CurrentPlayer != null)
-            {
-                GameManager.CurrentPlayer.PropertyChanged += CurrentPlayer_PropertyChanged;
-            }
+            GameManager.CurrentPlayer?.PropertyChanged += CurrentPlayer_PropertyChanged;
 
             // Update UI elements for new player
             UpdateUI();

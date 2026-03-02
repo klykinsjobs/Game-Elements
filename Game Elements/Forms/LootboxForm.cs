@@ -38,10 +38,7 @@ namespace Game_Elements
 
             // Event subscriptions
             GameManager.CurrentPlayerChanged += GameManager_CurrentPlayerChanged;
-            if (GameManager.CurrentPlayer != null)
-            {
-                GameManager.CurrentPlayer.Inventory.PropertyChanged += Inventory_PropertyChanged;
-            }
+            GameManager.CurrentPlayer?.Inventory.PropertyChanged += Inventory_PropertyChanged;
 
             // Update UI elements for current player
             UpdateUI();
@@ -55,10 +52,7 @@ namespace Game_Elements
 
             // Unsubscribe
             GameManager.CurrentPlayerChanged -= GameManager_CurrentPlayerChanged;
-            if (GameManager.CurrentPlayer != null)
-            {
-                GameManager.CurrentPlayer.Inventory.PropertyChanged -= Inventory_PropertyChanged;
-            }
+            GameManager.CurrentPlayer?.Inventory.PropertyChanged -= Inventory_PropertyChanged;
         }
 
         private void GameManager_CurrentPlayerChanged(Player? previousPlayer)
@@ -71,16 +65,10 @@ namespace Game_Elements
             }
 
             // Unsubscribe from previous player's events
-            if (previousPlayer != null)
-            {
-                previousPlayer.Inventory.PropertyChanged -= Inventory_PropertyChanged;
-            }
+            previousPlayer?.Inventory.PropertyChanged -= Inventory_PropertyChanged;
 
             // Subscribe to new player's events
-            if (GameManager.CurrentPlayer != null)
-            {
-                GameManager.CurrentPlayer.Inventory.PropertyChanged += Inventory_PropertyChanged;
-            }
+            GameManager.CurrentPlayer?.Inventory.PropertyChanged += Inventory_PropertyChanged;
 
             // Update UI elements for new player
             UpdateUI();
@@ -217,10 +205,7 @@ namespace Game_Elements
                 int b = (int)(t.StartColor.B + (t.TargetColor.B - t.StartColor.B) * ratio);
 
                 // Apply the new color to the panel
-                if (t.Panel != null)
-                {
-                    t.Panel.BackColor = Color.FromArgb(r, g, b);
-                }
+                t.Panel?.BackColor = Color.FromArgb(r, g, b);
 
                 // If transition is complete, remove it
                 if (t.CurrentStep >= t.TotalSteps)

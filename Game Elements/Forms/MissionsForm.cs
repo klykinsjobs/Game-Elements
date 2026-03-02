@@ -574,10 +574,7 @@ namespace Game_Elements
                 int b = (int)(t.StartColor.B + (t.TargetColor.B - t.StartColor.B) * ratio);
 
                 // Apply the new color to the panel
-                if (t.Panel != null)
-                {
-                    t.Panel.BackColor = Color.FromArgb(r, g, b);
-                }
+                t.Panel?.BackColor = Color.FromArgb(r, g, b);
 
                 // If transition is complete, remove it
                 if (t.CurrentStep >= t.TotalSteps)
@@ -604,11 +601,8 @@ namespace Game_Elements
             {
                 // Get new selection
                 _selectedMission = GameManager.CurrentPlayer.Missions[index];
-                if (_selectedMission != null)
-                {
-                    // Subscribe to its property changes
-                    _selectedMission.PropertyChanged += SelectedMission_PropertyChanged;
-                }
+                // Subscribe to its property changes
+                _selectedMission?.PropertyChanged += SelectedMission_PropertyChanged;
             }
 
             // Update UI to reflect changes
@@ -621,14 +615,11 @@ namespace Game_Elements
 
         private void DeselectPageItem()
         {
-            if (_selectedMission != null)
-            {
-                // Unsubscribe
-                _selectedMission.PropertyChanged -= SelectedMission_PropertyChanged;
+            // Unsubscribe
+            _selectedMission?.PropertyChanged -= SelectedMission_PropertyChanged;
 
-                // Reset
-                _selectedMission = null;
-            }
+            // Reset
+            _selectedMission = null;
         }
 
         private void DeselectButton_Click(object sender, EventArgs e)

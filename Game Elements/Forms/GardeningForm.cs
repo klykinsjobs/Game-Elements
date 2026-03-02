@@ -423,11 +423,8 @@ namespace Game_Elements
             {
                 // Get new selection
                 _selectedGardeningPlot = GameManager.CurrentPlayer.GardeningPlots[index];
-                if (_selectedGardeningPlot != null)
-                {
-                    // Subscribe to its property changes
-                    _selectedGardeningPlot.PropertyChanged += SelectedGardeningPlot_PropertyChanged;
-                }
+                // Subscribe to its property changes
+                _selectedGardeningPlot?.PropertyChanged += SelectedGardeningPlot_PropertyChanged;
             }
 
             // Update UI to reflect changes
@@ -443,14 +440,11 @@ namespace Game_Elements
 
         private void DeselectPageItem()
         {
-            if (_selectedGardeningPlot != null)
-            {
-                // Unsubscribe
-                _selectedGardeningPlot.PropertyChanged -= SelectedGardeningPlot_PropertyChanged;
+            // Unsubscribe
+            _selectedGardeningPlot?.PropertyChanged -= SelectedGardeningPlot_PropertyChanged;
 
-                // Reset
-                _selectedGardeningPlot = null;
-            }
+            // Reset
+            _selectedGardeningPlot = null;
         }
 
         private void DeselectButton_Click(object sender, EventArgs e)

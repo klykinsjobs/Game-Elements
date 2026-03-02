@@ -275,10 +275,7 @@ namespace Game_Elements
                 int b = (int)(t.StartColor.B + (t.TargetColor.B - t.StartColor.B) * ratio);
 
                 // Apply the new color to the panel
-                if (t.Panel != null)
-                {
-                    t.Panel.BackColor = Color.FromArgb(r, g, b);
-                }
+                t.Panel?.BackColor = Color.FromArgb(r, g, b);
 
                 // If transition is complete, remove it
                 if (t.CurrentStep >= t.TotalSteps)

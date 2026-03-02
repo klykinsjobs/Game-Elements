@@ -506,8 +506,7 @@ namespace Game_Elements.Engine
                 foreach (var guid in mission.AssignedUnitGuids)
                 {
                     var unit = Players[playerIndex].Inventory.Units.FirstOrDefault(u => u.Id == guid);
-                    if (unit != null)
-                        unit.UnitState = UnitState.OnMission;
+                    unit?.UnitState = UnitState.OnMission;
                 }
 
                 // Update quests and statistics

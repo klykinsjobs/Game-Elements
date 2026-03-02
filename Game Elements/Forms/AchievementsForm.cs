@@ -15,10 +15,7 @@ namespace Game_Elements
 
             // Event subscriptions
             GameManager.CurrentPlayerChanged += GameManager_CurrentPlayerChanged;
-            if (GameManager.CurrentPlayer != null)
-            {
-                GameManager.CurrentPlayer.Achievements.ListChanged += Achievements_ListChanged;
-            }
+            GameManager.CurrentPlayer?.Achievements.ListChanged += Achievements_ListChanged;
 
             // Update UI elements for current player
             UpdateUI();
@@ -31,10 +28,7 @@ namespace Game_Elements
 
             // Unsubscribe
             GameManager.CurrentPlayerChanged -= GameManager_CurrentPlayerChanged;
-            if (GameManager.CurrentPlayer != null)
-            {
-                GameManager.CurrentPlayer.Achievements.ListChanged -= Achievements_ListChanged;
-            }
+            GameManager.CurrentPlayer?.Achievements.ListChanged -= Achievements_ListChanged;
         }
 
         private void GameManager_CurrentPlayerChanged(Player? previousPlayer)
@@ -47,16 +41,10 @@ namespace Game_Elements
             }
 
             // Unsubscribe from previous player's events
-            if (previousPlayer != null)
-            {
-                previousPlayer.Achievements.ListChanged -= Achievements_ListChanged;
-            }
+            previousPlayer?.Achievements.ListChanged -= Achievements_ListChanged;
 
             // Subscribe to new player's events
-            if (GameManager.CurrentPlayer != null)
-            {
-                GameManager.CurrentPlayer.Achievements.ListChanged += Achievements_ListChanged;
-            }
+            GameManager.CurrentPlayer?.Achievements.ListChanged += Achievements_ListChanged;
 
             // Update UI elements for new player
             UpdateUI();

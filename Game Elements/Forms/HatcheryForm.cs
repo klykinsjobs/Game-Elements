@@ -341,11 +341,8 @@ namespace Game_Elements
             {
                 // Get new selection
                 _selectedEggHatcher = GameManager.CurrentPlayer.EggHatchers[index];
-                if (_selectedEggHatcher != null)
-                {
-                    // Subscribe to its property changes
-                    _selectedEggHatcher.PropertyChanged += SelectedEggHatcher_PropertyChanged;
-                }
+                // Subscribe to its property changes
+                _selectedEggHatcher?.PropertyChanged += SelectedEggHatcher_PropertyChanged;
             }
 
             // Update UI to reflect changes
@@ -359,14 +356,11 @@ namespace Game_Elements
 
         private void DeselectPageItem()
         {
-            if (_selectedEggHatcher != null)
-            {
-                // Unsubscribe
-                _selectedEggHatcher.PropertyChanged -= SelectedEggHatcher_PropertyChanged;
+            // Unsubscribe
+            _selectedEggHatcher?.PropertyChanged -= SelectedEggHatcher_PropertyChanged;
 
-                // Reset
-                _selectedEggHatcher = null;
-            }
+            // Reset
+            _selectedEggHatcher = null;
         }
 
         private void DeselectButton_Click(object sender, EventArgs e)

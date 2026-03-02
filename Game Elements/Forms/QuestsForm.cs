@@ -562,10 +562,7 @@ namespace Game_Elements
                 int b = (int)(t.StartColor.B + (t.TargetColor.B - t.StartColor.B) * ratio);
 
                 // Apply the new color to the panel
-                if (t.Panel != null)
-                {
-                    t.Panel.BackColor = Color.FromArgb(r, g, b);
-                }
+                t.Panel?.BackColor = Color.FromArgb(r, g, b);
 
                 // If transition is complete, remove it
                 if (t.CurrentStep >= t.TotalSteps)
@@ -595,11 +592,8 @@ namespace Game_Elements
             {
                 // Get new selection
                 _selectedQuest = activeQuests[index];
-                if (_selectedQuest != null)
-                {
-                    // Subscribe to its property changes
-                    _selectedQuest.PropertyChanged += SelectedQuest_PropertyChanged;
-                }
+                // Subscribe to its property changes
+                _selectedQuest?.PropertyChanged += SelectedQuest_PropertyChanged;
             }
 
             // Update UI to reflect changes
@@ -615,14 +609,11 @@ namespace Game_Elements
 
         private void DeselectPageItem()
         {
-            if (_selectedQuest != null)
-            {
-                // Unsubscribe
-                _selectedQuest.PropertyChanged -= SelectedQuest_PropertyChanged;
+            // Unsubscribe
+            _selectedQuest?.PropertyChanged -= SelectedQuest_PropertyChanged;
 
-                // Reset
-                _selectedQuest = null;
-            }
+            // Reset
+            _selectedQuest = null;
         }
 
         private void DeselectButton_Click(object sender, EventArgs e)

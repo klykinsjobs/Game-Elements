@@ -492,10 +492,7 @@ namespace Game_Elements
                 int b = (int)(t.StartColor.B + (t.TargetColor.B - t.StartColor.B) * ratio);
 
                 // Apply the new color to the panel
-                if (t.Panel != null)
-                {
-                    t.Panel.BackColor = Color.FromArgb(r, g, b);
-                }
+                t.Panel?.BackColor = Color.FromArgb(r, g, b);
 
                 // If transition is complete, remove it
                 if (t.CurrentStep >= t.TotalSteps)
@@ -522,11 +519,8 @@ namespace Game_Elements
             {
                 // Get new selection
                 _selectedUnit = GameManager.CurrentPlayer.Inventory.Units[index];
-                if (_selectedUnit != null)
-                {
-                    // Subscribe to its property changes
-                    _selectedUnit.PropertyChanged += SelectedUnit_PropertyChanged;
-                }
+                // Subscribe to its property changes
+                _selectedUnit?.PropertyChanged += SelectedUnit_PropertyChanged;
             }
 
             // Update UI to reflect changes
@@ -540,14 +534,11 @@ namespace Game_Elements
 
         private void DeselectPageItem()
         {
-            if (_selectedUnit != null)
-            {
-                // Unsubscribe
-                _selectedUnit.PropertyChanged -= SelectedUnit_PropertyChanged;
+            // Unsubscribe
+            _selectedUnit?.PropertyChanged -= SelectedUnit_PropertyChanged;
 
-                // Reset
-                _selectedUnit = null;
-            }
+            // Reset
+            _selectedUnit = null;
         }
 
         private void DeselectButton_Click(object sender, EventArgs e)

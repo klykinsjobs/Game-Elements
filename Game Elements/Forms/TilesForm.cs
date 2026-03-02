@@ -51,10 +51,7 @@ namespace Game_Elements
 
             // Event subscriptions
             GameManager.CurrentPlayerChanged += GameManager_CurrentPlayerChanged;
-            if (GameManager.CurrentPlayer != null)
-            {
-                GameManager.CurrentPlayer.Tiles.ListChanged += Tiles_ListChanged;
-            }
+            GameManager.CurrentPlayer?.Tiles.ListChanged += Tiles_ListChanged;
 
             // Update UI elements for current player
             UpdateGrid();
@@ -72,10 +69,7 @@ namespace Game_Elements
 
             // Unsubscribe
             GameManager.CurrentPlayerChanged -= GameManager_CurrentPlayerChanged;
-            if (GameManager.CurrentPlayer != null)
-            {
-                GameManager.CurrentPlayer.Tiles.ListChanged -= Tiles_ListChanged;
-            }
+            GameManager.CurrentPlayer?.Tiles.ListChanged -= Tiles_ListChanged;
         }
 
         private void GameManager_CurrentPlayerChanged(Player? previousPlayer)
@@ -92,16 +86,10 @@ namespace Game_Elements
                 DeselectTile();
 
             // Unsubscribe from previous player's events
-            if (previousPlayer != null)
-            {
-                previousPlayer.Tiles.ListChanged -= Tiles_ListChanged;
-            }
+            previousPlayer?.Tiles.ListChanged -= Tiles_ListChanged;
 
             // Subscribe to new player's events
-            if (GameManager.CurrentPlayer != null)
-            {
-                GameManager.CurrentPlayer.Tiles.ListChanged += Tiles_ListChanged;
-            }
+            GameManager.CurrentPlayer?.Tiles.ListChanged += Tiles_ListChanged;
 
             // Update UI elements for new player
             viewRow = 2;
@@ -508,11 +496,8 @@ namespace Game_Elements
             {
                 // Get new selection
                 _selectedTile = GameManager.CurrentPlayer.Tiles.FirstOrDefault(t => t.X == x && t.Y == y);
-                if (_selectedTile != null)
-                {
-                    // Subscribe to its property changes
-                    _selectedTile.PropertyChanged += SelectedTile_PropertyChanged;
-                }
+                // Subscribe to its property changes
+                _selectedTile?.PropertyChanged += SelectedTile_PropertyChanged;
             }
 
             // Update UI to reflect changes
@@ -539,14 +524,11 @@ namespace Game_Elements
 
         private void DeselectTile()
         {
-            if (_selectedTile != null)
-            {
-                // Unsubscribe
-                _selectedTile.PropertyChanged -= SelectedTile_PropertyChanged;
+            // Unsubscribe
+            _selectedTile?.PropertyChanged -= SelectedTile_PropertyChanged;
 
-                // Reset
-                _selectedTile = null;
-            }
+            // Reset
+            _selectedTile = null;
         }
 
         private void DeselectButton_Click(object sender, EventArgs e)
