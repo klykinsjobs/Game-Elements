@@ -3,7 +3,9 @@
 Multi-Slot Idling Mission Table Game (C# / .NET)
 
 ## About
-This project is a C#/.NET idling mission table game with multiple independent player slots. Each player slot has its own missions, units, tiles, buildings, research tree, inventory, quests, statistics, achievements, etc. All player slots progress simultaneously in the background. The user can switch between them at any time to manage things, customize text, and engage with side systems like fishing, gardening, and lootboxes.
+A large-scale C# and .NET 10 desktop application built with WinForms, designed as an idling mission-table style game. This project demonstrates deep system design, complex state management, and a wide range of C# techniques working together to deliver a scalable, modular system.
+
+The game includes multiple player slots that progress simultaneously, each with its own missions, units, tiles, buildings, research tree, inventory, quests, statistics, achievements, and more. The player can switch between slots at any time to manage resources, customize strings, and interact with side systems such as fishing, gardening, lootboxes, and an item shop.
 
 This is a work in progress. Aspects of it are subject to change.
 
