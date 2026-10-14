@@ -1,0 +1,105 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Game_Elements.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="PrimaryBackColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">25, 25, 25</Value>
+    </Setting>
+    <Setting Name="SecondaryBackColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">35, 35, 35</Value>
+    </Setting>
+    <Setting Name="MouseOverBackColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">LightSeaGreen</Value>
+    </Setting>
+    <Setting Name="SelectedBackColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">LightSeaGreen</Value>
+    </Setting>
+    <Setting Name="PrimaryForeColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">230, 230, 230</Value>
+    </Setting>
+    <Setting Name="SelectedForeColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">White</Value>
+    </Setting>
+    <Setting Name="AccentBackColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">64, 0, 0</Value>
+    </Setting>
+    <Setting Name="AccentForeColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">255, 128, 128</Value>
+    </Setting>
+    <Setting Name="SuccessTextColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">80, 200, 120</Value>
+    </Setting>
+    <Setting Name="FailureTextColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">255, 128, 128</Value>
+    </Setting>
+    <Setting Name="ErrorTextColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">220, 70, 70</Value>
+    </Setting>
+    <Setting Name="FlavorTextColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">160, 160, 220</Value>
+    </Setting>
+    <Setting Name="CommonRarityColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">180, 180, 180</Value>
+    </Setting>
+    <Setting Name="RareRarityColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">70, 130, 255</Value>
+    </Setting>
+    <Setting Name="EpicRarityColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">170, 0, 255</Value>
+    </Setting>
+    <Setting Name="LegendaryRarityColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">DarkOrange</Value>
+    </Setting>
+    <Setting Name="SmallFontSize" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">10</Value>
+    </Setting>
+    <Setting Name="MediumFontSize" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">12</Value>
+    </Setting>
+    <Setting Name="LargeFontSize" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">14</Value>
+    </Setting>
+    <Setting Name="Padding" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">10</Value>
+    </Setting>
+    <Setting Name="TimestampTextOutput" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="WaterTerrainColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">40, 90, 140</Value>
+    </Setting>
+    <Setting Name="GrasslandTerrainColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">60, 120, 60</Value>
+    </Setting>
+    <Setting Name="DesertTerrainColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">180, 160, 110</Value>
+    </Setting>
+    <Setting Name="MountainTerrainColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">70, 70, 80</Value>
+    </Setting>
+    <Setting Name="P1BuildingColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">255, 95, 95</Value>
+    </Setting>
+    <Setting Name="P2BuildingColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">255, 165, 70</Value>
+    </Setting>
+    <Setting Name="P3BuildingColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">255, 225, 90</Value>
+    </Setting>
+    <Setting Name="P4BuildingColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">120, 220, 90</Value>
+    </Setting>
+    <Setting Name="P5BuildingColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">90, 200, 255</Value>
+    </Setting>
+    <Setting Name="P6BuildingColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">100, 140, 255</Value>
+    </Setting>
+    <Setting Name="P7BuildingColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">180, 110, 255</Value>
+    </Setting>
+    <Setting Name="P8BuildingColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">255, 120, 200</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
